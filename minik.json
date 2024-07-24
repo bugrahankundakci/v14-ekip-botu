@@ -1,11 +1,11 @@
 {
     "botSettings": {
         "token": "BOT TOKEN",
-        "ServerID": "1265397304337240174",
-        "clientID": "1263497880413667368",
-        "botowner": "205638637080150016",
-        "durum": "dnd",
-        "oynuyor": "Mesai girme"
+        "ServerID": "KULLANDIGINIZ SERVER ID",
+        "clientID": "BOT ID / CLIENT ID",
+        "botowner": "KENDI ID'NIZ",
+        "durum": "dnd-invisible-online-idle",
+        "oynuyor": "botun oynuyoru örn: allahla mesai"
     },
 
     "basvuru": {
@@ -25,12 +25,12 @@
 
         "ekip": {
             "rol": {
-                "kayıtlı": "1265402597221863475",
-                "kayıtsız": "1265402597766991923",
-                "yonetici": "1265712208084598815"
+                "kayıtlı": "BURAYA KAYITLI ROL ID'SI",
+                "kayıtsız": "BURAYA KAYITSIZ ROL ID'SI",
+                "yonetici": "BURAYA BAŞVURULARI KABUL EDİCEK OLAN ROL ID'SI."
             },
             "photograph": "https://pbs.twimg.com/media/EoCfpamXcAA2CdD.jpg:large",
-            "leaderboard": "1265476842635395073"
+            "leaderboard": "LEADERBOARD KANALI."
         },
 
         "menuayarlari": {

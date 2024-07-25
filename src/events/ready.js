@@ -5,11 +5,15 @@ module.exports = {
     name: Events.ClientReady,
     once: true,
     async execute(client) {
+
+
         console.log(`${client.user.tag} aktif!`);
         setPresence(client);
+
+
+
     },
 };
-
 
 function setPresence(client) {
     client.user.setPresence({

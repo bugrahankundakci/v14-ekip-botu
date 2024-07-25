@@ -3,9 +3,8 @@ const { JsonDatabase } = require('for.db');
 const moment = require('moment');
 const minik = require('../../minik.json');
 const db = new JsonDatabase({
-  databasePath: "./fordb.json"
-});
-
+    databasePath: "/src/database/fordb.json"
+  });
 
 module.exports = {
     name: Events.InteractionCreate,
@@ -15,10 +14,10 @@ module.exports = {
 
             switch (selectedValue) {
                 case 'mesaigir':
-                    const channel = await interaction.client.channels.fetch(minik.mesai.ekip.leaderboard);
+                    const channel = await interaction.client.channels.fetch(minik.leaderboard.mesai);
 
                     if (!channel) {
-                        console.error(`Kanal bulunamadı: ${minik.mesai.ekip.leaderboard}`);
+                        console.error(`Kanal bulunamadı: ${minik.leaderboard.mesai}`);
                         return;
                     }
 

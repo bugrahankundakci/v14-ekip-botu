@@ -5,9 +5,9 @@ const { catchError } = require('../functions/hatamesajı');
 module.exports = {
     name: Events.GuildMemberAdd,
     async execute(member, client) {
-        if (minik.mesai.ekip.rol.kayıtsız) {
+        if (minik.rol.kayıtsız) {
             try {
-                const role = member.guild.roles.cache.get(minik.mesai.ekip.rol.kayıtsız);
+                const role = member.guild.roles.cache.get(minik.rol.kayıtsız);
                 if (role) {
                     await member.roles.add(role);
                 }
@@ -18,7 +18,7 @@ module.exports = {
                     .addFields(
                         { name: 'Rolü veren ', value: `${client.user}`, inline: true },
                         { name: 'Kullanıcı', value: `${member}`, inline: true},
-                        { name: 'Rol', value: `<@&${minik.mesai.ekip.rol.kayıtsız}>`, inline: true}
+                        { name: 'Rol', value: `<@&${minik.rol.kayıtsız}>`, inline: true}
                  )
                  .setThumbnail(member.guild.iconURL({ dynamic: true }))                 .setTimestamp();
 

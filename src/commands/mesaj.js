@@ -51,6 +51,18 @@ module.exports = {
     )
     .addStringOption(option =>
       option
+        .setName('illegalmenu')
+        .setDescription('Tüm illegallerin farm kayıt edebileceği database menüsü.')
+        .setRequired(false)
+    )
+    .addStringOption(option =>
+      option
+        .setName('illegalyetkilimenusu')
+        .setDescription('Tüm ekibin database\'ini kontrol etmek için gerekli olan menü.')
+        .setRequired(false)
+    )
+    .addStringOption(option =>
+      option
       .setName('basvurubutonu')
       .setDescription('Ekip başvurusu için özel buton ekler.')
       .setRequired(false)
@@ -81,6 +93,8 @@ module.exports = {
       const content = options.getString('content');
       const yetkilimesaimenusu = options.getString('yetkilimesaimenusu');
       const basvurubutonu = options.getString('basvurubutonu');
+      const illegalmenu = options.getString('illegalmenu');
+      const yetkiliillegalmenusu = options.getString('illegalyetkilimenusu');
 
       const embed = new EmbedBuilder()
         .setDescription(description)
@@ -196,6 +210,101 @@ module.exports = {
         .addComponents(militaninbutonu);
 
         components.push(basvurubutonuu);
+      }
+
+      if(illegalmenu) {
+
+        const illegalmenubuilderim = new StringSelectMenuBuilder()
+          .setCustomId('farm-olustur')
+          .setPlaceholder(minik.farm.menuayarlari.menuplaceholder)
+          .addOptions([
+          {
+              label: minik.farm.menuayarlari.birseceneklabel,
+              emoji: minik.farm.menuayarlari.birsecenekemoji,
+              description: minik.farm.menuayarlari.birsecenekaciklama,
+              value: 'farmkontrol',
+          },
+          {
+            label: minik.farm.farmlar.Otlabel,
+            emoji: minik.farm.farmlar.otemoji,
+            description: minik.farm.farmlar.otaciklama,
+            value: 'otekle',
+          },
+          {
+              label: minik.farm.farmlar.kokainlabel,
+              emoji: minik.farm.farmlar.kokainemoji,
+              description: minik.farm.farmlar.kokainaciklama,
+              value: 'kokainekle',
+          },
+          {
+              label: minik.farm.farmlar.methlabel,
+              emoji: minik.farm.farmlar.methemoji,
+              description: minik.farm.farmlar.methaciklama,
+              value: 'methekle',
+          },
+          {
+              label: minik.farm.farmlar.karaparalabel,
+              emoji: minik.farm.farmlar.karaparaemoji,
+              description: minik.farm.farmlar.karaparaaciklama,
+              value: 'karaparaekle',
+          },
+          {
+              label: 'Seçenek Sıfırla',
+              description: 'Menüdeki seçeneğinizi sıfırlarsınız.',
+              emoji: '1264482771049386014',
+              value: 'sifirla',
+          },
+          ]);
+        const illegalmenuruw = new ActionRowBuilder()
+          .addComponents(illegalmenubuilderim);
+
+        components.push(illegalmenuruw);
+
+
+      }
+
+      if (yetkiliillegalmenusu) {
+
+
+        const illegalyetkilimenubuilderim = new StringSelectMenuBuilder()
+          .setCustomId('farm-yetkili')
+          .setPlaceholder(minik.farm.yetkilimenuayarlari.menuplaceholder)
+          .addOptions([
+            {
+              label: minik.farm.yetkilimenuayarlari.birseceneklabel,
+              emoji: minik.farm.yetkilimenuayarlari.birsecenekemoji,
+              description: minik.farm.yetkilimenuayarlari.birsecenekaciklama,
+              value: 'forceekle',
+          },
+          {
+              label: minik.farm.yetkilimenuayarlari.ikiseceneklabel,
+              emoji: minik.farm.yetkilimenuayarlari.ikisecenekemoji,
+              description: minik.farm.yetkilimenuayarlari.ikisecenekaciklama,
+              value: 'forcecheck',
+          },
+          {
+              label: minik.farm.yetkilimenuayarlari.ucseceneklabel,
+              emoji: minik.farm.yetkilimenuayarlari.ucsecenekemoji,
+              description: minik.farm.yetkilimenuayarlari.ucsecenekaciklama,
+              value: 'forcefarmsil',
+          },
+          {
+              label: minik.farm.yetkilimenuayarlari.dortseceneklabel,
+              emoji: minik.farm.yetkilimenuayarlari.dortsecenekemoji,
+              description: minik.farm.yetkilimenuayarlari.dortsecenekaciklama,
+              value: 'database-check',
+          },
+          {
+              label: 'Seçenek Sıfırla',
+              description: 'Menüdeki seçeneğinizi sıfırlarsınız.',
+              emoji: '1264482771049386014',
+              value: 'sifirla',
+          },
+          ]);
+        const illegalyetkilimenuruw = new ActionRowBuilder()
+          .addComponents(illegalyetkilimenubuilderim);
+
+        components.push(illegalyetkilimenuruw);
       }
 
       await guild.channels.cache.get(channel.id).send({

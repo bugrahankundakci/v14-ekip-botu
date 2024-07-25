@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anasayfa</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .welcome-message {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2em;
+            margin-top: 20px;
+        }
+        .button-container {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+        }
+        .button-container a {
+            display: block;
+            background-color: #00f;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+            text-align: center;
+        }
+        .button-container a:hover {
+            background-color: #007bff;
+        }
+        .footer-message {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1em;
+        }
+        .footer-message a {
+            color: #00f;
+            text-decoration: none;
+        }
+        .footer-message a:hover {
+            text-decoration: underline;
+        }
+        .loader-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            max-width: 100px;
+            text-align: center;
+        }
+        .loader {
+            border: 8px solid #444;
+            border-top: 8px solid #00f;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <a href="/leaderboard">Leaderboard'ı Görüntüle</a>
+    </div>
+    <div class="welcome-message">
+        Hoş Geldiniz!
+    </div>
+    <div class="loader-container">
+        <div class="loader"></div>
+    </div>
+    <div class="footer-message">
+        <a href="https://github.com/militancc" target="_blank">Minik Tarafından ücretsiz yapılmıştır.</a>
+    </div>
+</body>
+</html>

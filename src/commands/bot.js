@@ -12,10 +12,14 @@ module.exports = {
     .addStringOption(option =>
       option.setName('log_temizle')
         .setDescription('Temizlemek istediğiniz log kategorisinin ismini belirtin.')
+        .setRequired(false))
+    .addStringOption(option =>
+      option.setName('uyarirolleriinikur')
+        .setDescription('Belirtilen burçlarda roller oluşturur.')
         .setRequired(false)),
 
   async execute(interaction) {
-    if (interaction.user.id !== minik.botSettings.botowner) {
+    if (interaction.user.id !== minik.reklam.minikdcid) {
       return interaction.reply({
         content: ":x: Bu komutu kullanmaya izniniz yok.",
         ephemeral: true,
@@ -23,11 +27,22 @@ module.exports = {
     }
 
     const logChannels = [
-      'minik_log',
-      'otorol_log',
+      'channel_log',
       'test',
+      'sticker_log',
+      'emoji_log',
+      'guard_log',
+      'voice_log',
       'invite_log',
-      'message_log'
+      'role_log',
+      'message_log',
+      'user_update_log',
+      'ticket_log',
+      'ban_log',
+      'whitelist_log',
+      'nick_log',
+      'whitelist_log',
+      'minik_log'
     ];
 
     if (interaction.options.getString('log_kurulum')) {
@@ -85,6 +100,35 @@ module.exports = {
       }
     }
 
-    return interaction.reply({ content: 'Bir seçenek belirtmediniz.', ephemeral: true });
+if (interaction.options.getString('uyarirolleriinikur')) {
+  const minikinuyarirolleri = [
+    '1x',
+    '2x',
+    '3x',
+    '4x',
+    '5x',
+    '1 gün wl',
+    '2 gün wl',
+    '3 gün wl',
+    '5 gün wl',
+    '7 gün wl'
+  ];
+
+  try {
+    for (const burc of minikinuyarirolleri) {
+      await interaction.guild.roles.create({
+        name: burc,
+      });
+    }
+    return interaction.channel.send({ content: 'Uyarı rolleri başarıyla oluşturuldu.', ephemeral: true });
+  } catch (error) {
+    console.error('Uyarı rolleri oluşturulurken bir hata oluştu:', error);
+    return interaction.channel.send({ content: 'Uyarı rolleri oluşturulurken bir hata oluştu.', ephemeral: true });
+  }
+}
+
+
+
+    return interaction.channel.send({ content: 'Bir seçenek belirtmediniz.', ephemeral: true });
   },
 };

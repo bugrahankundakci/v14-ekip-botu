@@ -81,7 +81,7 @@ module.exports = {
             }
 
             const collector = minikinyetkililogodasi.createMessageComponentCollector(); //{ time: 150000 }
-            const minikinyetkilirolleri = minik.mesai.ekip.rol.kayıtlı;
+            const minikinyetkilirolleri = minik.rol.kayıtlı;
             const minikinyetkikbasvurusuatanmali = interaction.member;
             const minikinyetkiliolayloglari = interaction.guild.channels.cache.find(channel => channel.name === 'minik_log');
             collector.on('collect', async interaction => {
@@ -101,7 +101,7 @@ module.exports = {
                 }
             });
             
-            await minikinyetkililogodasi.send( { content: `<@&${minik.mesai.ekip.rol.yonetici}>, <@${interaction.member.id}> başvuru attı!`, embeds: [minikinyetkiliembedi], components: [minikinyetkilikabulactionu]} )
+            await minikinyetkililogodasi.send( { content: `<@&${minik.rol.yonetici}>, <@${interaction.member.id}> başvuru attı!`, embeds: [minikinyetkiliembedi], components: [minikinyetkilikabulactionu]} )
            // await interaction.reply({ content: `# BAŞVURUNUZ BAŞARIYLA GÖNDERİLDİ! \n\n Kişisel Bilgiler: \n > ${minikinsordugusorular1}  \n\n Platform: \n > ${minikinsordugusorular2} \n\n Diller: \n > ${minikinsordugusorular3} \n\n Bize ne katabilirsiniz?: \n > ${minikinsordugusorular4} \n\n Hangi Yazılım Dillerini biliyorsunuz? \n > ${minikinsordugusorular5}`, ephemeral: true });
         }
     }

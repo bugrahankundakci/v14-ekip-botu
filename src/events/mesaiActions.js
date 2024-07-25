@@ -4,7 +4,7 @@ const moment = require('moment');
 const fs = require('fs');
 
 const db = new JsonDatabase({
-  databasePath: "./fordb.json"
+  databasePath: "./src/database/fordb.json"
 });
 
 module.exports = {
@@ -217,7 +217,7 @@ module.exports = {
                     break;
 
                 default:
-                    await interaction.reply({ content: 'Geçersiz modal!', ephemeral: true });
+                    //await interaction.reply({ content: 'Geçersiz modal!', ephemeral: true });
                     break;
             }
         }

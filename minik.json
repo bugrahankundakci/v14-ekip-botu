@@ -1,36 +1,42 @@
 {
     "botSettings": {
         "token": "BOT TOKEN",
-        "ServerID": "KULLANDIGINIZ SERVER ID",
-        "clientID": "BOT ID / CLIENT ID",
-        "botowner": "KENDI ID'NIZ",
-        "durum": "dnd-invisible-online-idle",
-        "oynuyor": "botun oynuyoru örn: allahla mesai"
+        "ServerID": "SERVER'IN ID",
+        "clientID": "BOT ID",
+        "durum": "dnd",
+        "oynuyor": "BOT OYNUYOR"
     },
 
-    "basvuru": {
-        "birincisoru": "Kendinizi tanıtın",
-        "birincisoruplace": "isim - yaş - il",
-        "ikincisoru": "Hangi sunucularda oynadın?",
-        "ikincisorusoruplace": "Hangi sunucularda rol yaptın?",
-        "ucuncusoru": "Fivemde kaç saatiniz var?",
-        "ucuncusoruplace": "Teste tabi tutulucaksınız. ona göre doldurun.",
-        "dorduncusoru": "Bize ne katabilirsiniz??",
-        "dorduncusoruplace": "Düşüncelerinizi yazınız.",
-        "besincisoru": "Destek odasında kavga",
-        "besincisoruplace": "Destek odasına giriş yaptığınızda kavga olduğunu farkettiniz. Ne yaparsınız?"
-    },
-    
+        "rol": {
+            "kayıtlı": "KAYITLI ROLÜ / EKİP ROLÜ",
+            "kayıtsız": "KAYITSIZ ROLÜ",
+            "inaktif": "İNAKTİF ROLÜ",
+            "yonetici": "YÖNETİCİ ROLÜ (ÇOĞU KOMUTU KULLANMAYA YETKİSİ VAR.)"
+        },
+
+
+        "kanal": {
+            "welcome": "KANAL ID",
+            "kurallar": "KANAL ID",
+            "duyurular": "KANAL ID",
+            "hatakanali": "KANAL ID",
+            
+            "chat": "CHAT KANAL ID",
+            "ozelodakategori": "ÖZEL ODALARIN AÇILACAĞI KATEGORİ",
+            "ozeloda": "HANGİ ODAYA GİRİNCE ÖZEL ODA AÇILSIJN İSTİYORSANIZ O KANALIN ID"
+        },
+
+        "leaderboard": {
+            "farm": "FARMLARIN LEADERBOARD'INI HANGI CHAT KANALINA ATICAKSA O ID",
+            "mesai": "MESAILERIN LEADERBOARD'INI HANGI CHAT KANALINA ATICAKSA O ID"
+        },
+
+
+
     "mesai": {
 
         "ekip": {
-            "rol": {
-                "kayıtlı": "BURAYA KAYITLI ROL ID'SI",
-                "kayıtsız": "BURAYA KAYITSIZ ROL ID'SI",
-                "yonetici": "BURAYA BAŞVURULARI KABUL EDİCEK OLAN ROL ID'SI."
-            },
-            "photograph": "https://pbs.twimg.com/media/EoCfpamXcAA2CdD.jpg:large",
-            "leaderboard": "LEADERBOARD KANALI."
+            "photograph": "https://pbs.twimg.com/media/EoCfpamXcAA2CdD.jpg:large"
         },
 
         "menuayarlari": {
@@ -70,10 +76,80 @@
             "bessecenekemoji": "1264482782994890763",
             "bessecenekaciklama": "ID'sını girdiğiniz memurun tüm mesailerini görürsünüz."
         }
+    },
+
+    "farm": {
+        
+        "menuayarlari": {
+            "mesaj": " **Alttaki menüden Farmlarınızı kontrol edebilirsiniz.** \n\n```Farmlarınızın kontrol altında olduğunu unutmayın.``` \n\n> __Yaptığınız şeyler kayıt altındadır.__ ",
+            "menuplaceholder": " Farm menüsü için tıklayın.",
+
+            "birseceneklabel": "Farm kontrol et",
+            "birsecenekemoji": "1264482774434320455",
+            "birsecenekaciklama": "Farmlarını kontrol edersiniz.",
+
+            "ikiseceneklabel": "Son farm",
+            "ikisecenekemoji": "1264482777739300874",
+            "ikisecenekaciklama": "En son ne eklemişsin onu kontrol edersin."
+        },
+        "farmlar": {
+            "Otlabel": "Ot ekle",
+            "otemoji": "1265926905492930561",
+            "otaciklama": "Database'e ot kayıt et.",
+            "kokainlabel": "Kokain ekle",
+            "kokainemoji": "1265926602127179876",
+            "kokainaciklama": "Database'e kokain kayıt et.",
+            "methlabel": "Meth ekle",
+            "methemoji": "1265926568145059913",
+            "methaciklama": "Database'e meth kayıt et.",
+            "karaparalabel": "Karapara ekle",
+            "karaparaemoji": "1265926534061883423",
+            "karaparaaciklama": "Database'e karapara kayıt et."
+        },
+        "yetkilimenuayarlari": {
+            "mesaj": " **Alttaki menüden Farmları yönetebilirsiniz.** \n\n```Ekibinizdeki kullanıcıların farmlarını buradan yönetebilirsiniz.``` \n\n> __Yaptığınız şeyler kişilerin farmını etkiler.__ ",
+            "menuplaceholder": " Farmları Yönetmek için tıklayınız..",
+            "birseceneklabel": "Database'e farm ekle",
+            "birsecenekemoji": "1264482776208506971",
+            "birsecenekaciklama": "Belirli bir kişinin database'ine farm eklersiniz",
+            "ikiseceneklabel": "Database'e bak.",
+            "ikisecenekemoji": "1264482774434320455",
+            "ikisecenekaciklama": "Belirli bir kişinin database'ine bakarsınız.",
+            "ucseceneklabel": "Database'den farm sil.",
+            "ucsecenekemoji": "1264482777739300874",
+            "ucsecenekaciklama": "Belirli bir kişinin database'inden farm silersiniz.",
+            "dortseceneklabel": "Tüm Database",
+            "dortsecenekemoji": "1264482777739300874",
+            "dortsecenekaciklama": "Tüm database'i görürsünüz."
+        
+        }
+    },
 
 
+    "reklam": {
+        "minikprofillink": "https://discord.com/users/205638637080150016",
+        "minikdcid": "205638637080150016",
+        "minikisim": "Militan.",
+        "minikprofile": "https://cdn.discordapp.com/avatars/205638637080150016/a_53657df5c4797f31e2f7b61ef2f84374.gif?size=1024",
+        "fordevelopment": "ttps://discord.gg/1742",
+        "embedphoto": "https://media.discordapp.net/attachments/1238638628109025360/1243243537626038332/Adsz.png?ex=6650c445&is=664f72c5&hm=0ae4db728c7120438f0b4f3eb5c1b4da5520d268be3ea7a7ede93ecee9e183a7&=&format=webp&quality=lossless&width=1019&height=6"
+        },
+    
+    "basvuru": {
+        "birincisoru": "Kendinizi tanıtın",
+        "birincisoruplace": "isim - yaş - il",
+        "ikincisoru": "Hangi sunucularda oynadın?",
+        "ikincisorusoruplace": "Hangi sunucularda rol yaptın?",
+        "ucuncusoru": "Fivemde kaç saatiniz var?",
+        "ucuncusoruplace": "Teste tabi tutulucaksınız. ona göre doldurun.",
+        "dorduncusoru": "Bize ne katabilirsiniz??",
+        "dorduncusoruplace": "Düşüncelerinizi yazınız.",
+        "besincisoru": "Destek odasında kavga",
+        "besincisoruplace": "Destek odasına giriş yaptığınızda kavga olduğunu farkettiniz. Ne yaparsınız?"
+    },
+
+    "log": {
+        "rolguncelleme": true
     }
- 
-
 
  }

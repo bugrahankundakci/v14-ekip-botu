@@ -1,14 +1,19 @@
 # 🎉 **Ekip Botu** 🎉
 
 Bu, Discord sunucunuzda mesai yönetimini kolaylaştırmak için tasarlanmış bir bot. Bot, kullanıcıların mesaiye giriş ve çıkışlarını takip eder ve çeşitli raporlar sunar.
-## **v2**'de neler mi **eklendi**?
 
 ## 📜 **Özellikler** 📜
 
-- 📊 **Mesaiye Giren Kişiler**: Sunucunuzdaki en çok mesaiye giren kişileri sıralar.
-- 📊 **Farm yapan Kişiler**: Sunucunuzdaki en çok farm yapan kişileri sıralar.
-- ⏱️ **En Uzun Mesai Süresine Sahip Kişiler**: En uzun süre mesai yapan kullanıcıları listeler.
-- 🔄 **Mesai Bilgilerini Güncelleme**: Güncel mesai bilgilerini kanalda paylaşır.
+- Mesai sistemi
+- Tüm Loglar
+- Farm sistemi
+- Özel oda sistemi
+- Ekip başvuru sistemi
+- Özelleştirilebilir mesaj sistemi.
+- Özelleştirilebilir buton / menü (kısacası interaction) sistemi
+- Çoğu şey otomasyon (kurulum gerekmez)
+- Minik.json'a gereken şeyleri doldurup başlatın.
+- Web panel! (şimdilik sadece web panelden total farmları görebiliyorsunuz.)
 
 ## 🎨 **Komutlar** 🎨
 - aktiflik

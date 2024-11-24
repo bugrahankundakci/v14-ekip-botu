@@ -61,7 +61,7 @@ module.exports = {
             const minikinyetkililogodasi = interaction.guild.channels.cache.find(channel => channel.name === 'minik_log');
             const minikinyetkiliembedi = new EmbedBuilder()
             .setTitle(`Başvuru Geldi!`)
-            .setDescription(`Kişisel Bilgiler: \n > ${minikinsordugusorular1}  \n\n Platform: \n > ${minikinsordugusorular2} \n\n Diller: \n > ${minikinsordugusorular3} \n\n Bize ne katabilirsiniz?: \n > ${minikinsordugusorular4} \n\n Bizden beklentiniz nedir? ve Hangi Yazılım Dillerini biliyorsunuz? \n > ${minikinsordugusorular5}`)
+            .setDescription(`${minik.basvuru.birincisoru} \n > ${minikinsordugusorular1}  \n\n ${minik.basvuru.ikincisoru} \n > ${minikinsordugusorular2} \n\n ${minik.basvuru.ucuncusoru} : \n > ${minikinsordugusorular3} \n\n ${minik.basvuru.dorduncusoru}: \n > ${minikinsordugusorular4} \n\n ${minik.basvuru.besincisoru} \n > ${minikinsordugusorular5}`)
             .setImage(minik.mesai.ekip.photograph);
             const minikinyetkilikabulactionu = new ActionRowBuilder()
             .addComponents(
@@ -82,12 +82,14 @@ module.exports = {
 
             const collector = minikinyetkililogodasi.createMessageComponentCollector(); //{ time: 150000 }
             const minikinyetkilirolleri = minik.rol.kayıtlı;
+            const minikinkayitsizrolu = minik.rol.kayıtsız;
             const minikinyetkikbasvurusuatanmali = interaction.member;
             const minikinyetkiliolayloglari = interaction.guild.channels.cache.find(channel => channel.name === 'minik_log');
             collector.on('collect', async interaction => {
                 if (interaction.customId === 'minikinyetkilikabulbuttonu') {
-                    await interaction.update({ content: `Ekip Başvurusu <@${interaction.user.id}> - (${interaction.user.id}) tarafından kabul edildi. Yetkiler veriliyor...`, components: [] });
+                    await interaction.update({ content: `Ekip Başvurusu <@${interaction.user.id}> - (${interaction.user.id}) tarafından kabul edildi. Roller veriliyor...`, components: [] });
                     minikinyetkikbasvurusuatanmali.roles.add(minikinyetkilirolleri);
+                    minikinyetkikbasvurusuatanmali.roles.remove(minikinkayitsizrolu);
                     await minikinyetkiliolayloglari.send(`<@${interaction.member.id}> - (${interaction.member.id}) Tarafından gönderilen Ekip Başvurusu <@${interaction.user.id}> - (${interaction.user.id}) Tarafından Kabul Edildi.`)
                 } else if (interaction.customId === 'minikinyetkiliredbutonu') {
                     await interaction.update({ content: `Ekip Başvurusu <@${interaction.user.id}> - (${interaction.user.id}) tarafından reddedildi.`, components: [] });
@@ -102,7 +104,7 @@ module.exports = {
             });
             
             await minikinyetkililogodasi.send( { content: `<@&${minik.rol.yonetici}>, <@${interaction.member.id}> başvuru attı!`, embeds: [minikinyetkiliembedi], components: [minikinyetkilikabulactionu]} )
-           // await interaction.reply({ content: `# BAŞVURUNUZ BAŞARIYLA GÖNDERİLDİ! \n\n Kişisel Bilgiler: \n > ${minikinsordugusorular1}  \n\n Platform: \n > ${minikinsordugusorular2} \n\n Diller: \n > ${minikinsordugusorular3} \n\n Bize ne katabilirsiniz?: \n > ${minikinsordugusorular4} \n\n Hangi Yazılım Dillerini biliyorsunuz? \n > ${minikinsordugusorular5}`, ephemeral: true });
+            await interaction.reply({ content: `# BAŞVURUNUZ BAŞARIYLA GÖNDERİLDİ! \n\n ${minik.basvuru.birincisoru} \n > ${minikinsordugusorular1}  \n\n ${minik.basvuru.ikincisoru} \n > ${minikinsordugusorular2} \n\n ${minik.basvuru.ucuncusoru} : \n > ${minikinsordugusorular3} \n\n ${minik.basvuru.dorduncusoru}: \n > ${minikinsordugusorular4} \n\n ${minik.basvuru.besincisoru} \n > ${minikinsordugusorular5}`, ephemeral: true });
         }
     }
 };
